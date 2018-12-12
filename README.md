@@ -1,0 +1,2 @@
+# Tehnilised_votted
+JavaScript
