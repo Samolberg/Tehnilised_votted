@@ -14,3 +14,5 @@ Kui number on vale väljastada sisestatud input ning järelejäänud katsete arv
 
 ## Viies samm
 Kui on vale input saadud 5 korda, lõpetada script ning väljastada 'Game over' 
+
+
