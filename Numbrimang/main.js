@@ -9,9 +9,12 @@ const lastResult =
       document.querySelector('.lastResult');      
 const lowOrHigh =
       document.querySelector('.lowOrHigh');
+const refreshh = 
+      document.querySelector('#refreshh');
 
 let guessCount = 1;
 let randomNumber = Math.floor(Math.random()*100) + 1;
+refreshh.style.visibility = "hidden";
 
 const checkGuess = () => {
     let userGuess = Number(guessField.value);
@@ -27,17 +30,18 @@ const checkGuess = () => {
         lastResult.textContent = 'Viimane pakkumine oli õige vastus';
         lastResult.style.backgroundColor = 'green';
         lowOrHigh.textContent = ' ';
-        document.getElementById("button").disabled = true;
-        document.getElementById("guessField").disabled = true;
+        button.disabled = true;
+        guessField.disabled = true;
+        refreshh.style.visibility = "visible";
         
         //kui kasutajal saavad pakkumised otsa    
     } else if (guessCount === 10) {
         lastResult.textContent = 'Kaotasid';
         lowOrHigh.textContent = ' ';
-        document.getElementById("button").disabled = true;
-        document.getElementById("guessField").disabled = true;
+        button.disabled = true;
+        guessField.disabled = true;
         lastResult.style.backgroundColor = 'red';
-        document.getElementById('refresh').style.visibility = "visible";
+        refreshh.style.visibility = "visible";
     }else {
         lastResult.textContent = 'Viimane pakkumine oli vale vastus';
         
