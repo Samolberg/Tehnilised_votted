@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+<!--        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Varjupaik</title>
+        <style>
+            .mySlides {display:none;}
+        </style>
+    </head>
+    <body>
+        <header>            
+            <div class="container">
+                <ul>
+                    <li><a href="#">Avaleht</a></li>
+                    <li><a href="#">Loomad varjupaigas</a></li>
+                    <li><a href="#">Kadunud loomad</a></li>
+                    <li><a href="#">Loomade profiilid</a></li>                        
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Toetajad</a></li>
+                </ul>
+            </div>            
+            <div class="w3-content w3-section" style=" max-width:100%">
+                <img class="mySlides" src="images/pet1.jpg" style="width:100%">
+                <img class="mySlides" src="images/resized2.jpg" style="width:100%">
+                <img class="mySlides" src="images/resized1.jpg" style="width:100%">
+            </div>
+        </header>
+        <div class="content">
+            <div class="content-area" id="intro">
+                <h1>Varjupaik OÜ</h1>
+                <h6>Kalda tee 1<br> 50703 Tartu<br> Tartumaa<br>
+                    +372 423 55 66
+                </h6>
+                <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2092.196434555756!2d26.748754516164585!3d58.37322399435063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb3712bef642ef%3A0xaea89c65d242e040!2sTartu+Annelinna+Eeden!5e0!3m2!1sen!2see!4v1547722039730" width="300" height="250">
+                </iframe>
+            </div>
+            <div class="content-area">
+                <h1>Kadunud loomad</h1>
+                <button id="avaleht-nupp">Teata kadunud lemmikust siin</button>
+            </div>
+            <div class="content-area">
+                <h1>Varjupaiga loomad</h1>
+                <button>Tutvu lemmikutega</button>
+            </div>
+            <div class="content-area">
+                <h1>Varjupaiga toetamine</h1>
+                <button id="kuva">Toeta varjupaika</button>
+                <div id="raha" class="hidden">
+                    <h3>Saada meile paari euri!</h3>
+                </div>
+            </div>            
+        </div>
+        <footer>
+            <div class="footer">
+                <h6>Varjupaikade MTÜ</h6>
+                <p id="footerText">Raba 32, Pärnu, 80043<br>
+                    Registrikood 80249280<br>
+                    info@varjupaik.ee<br>
+                    üldjuht Triinu Priks +372 <br>5046102<br></p>
+            </div>
+        </footer>
+        <script>
+            var slideIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none"; 
+                }
+                slideIndex++;
+                if (slideIndex > x.length) {slideIndex = 1} 
+                x[slideIndex-1].style.display = "block"; 
+                setTimeout(carousel, 6000); // Change image every 2 seconds
+            }
+            
+            $(function(){
+                $('#kuva').click(function(){
+                    $('#raha').removeClass('hidden');
+                });                
+            });
+
+        </script>
+    </body>
+</html>
+<!--Prop style display w3 schools-->
