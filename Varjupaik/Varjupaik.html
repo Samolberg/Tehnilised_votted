@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/skeleton.css">
-<!--        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+        <!--        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Varjupaik</title>
@@ -16,8 +16,8 @@
             <div class="container">
                 <ul>
                     <li><a href="#">Avaleht</a></li>
-                    <li><a href="#">Loomad varjupaigas</a></li>
-                    <li><a href="#">Kadunud loomad</a></li>
+                    <li><a href="#kadunudLoomad">Kadunud loomad</a></li>
+                    <li><a href="#">Loomad varjupaigas</a></li>                    
                     <li><a href="#">Loomade profiilid</a></li>                        
                     <li><a href="#">Kontakt</a></li>
                     <li><a href="#">Toetajad</a></li>
@@ -38,29 +38,51 @@
                 <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2092.196434555756!2d26.748754516164585!3d58.37322399435063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb3712bef642ef%3A0xaea89c65d242e040!2sTartu+Annelinna+Eeden!5e0!3m2!1sen!2see!4v1547722039730" width="300" height="250">
                 </iframe>
             </div>
-            <div class="content-area">
+            <div class="content-area" id="kadunudLoomad">
                 <h1>Kadunud loomad</h1>
-                <button id="avaleht-nupp">Teata kadunud lemmikust siin</button>
+                <button id="avaleht-nupp" onclick="kadunudShow()">Teata kadunud lemmikust siin</button>
+                <div id="kadunud" style="display:none;">                    
+                    <h1>Teata meid kadunud loomast</h1>
+                    <form>
+                        <label for="name">Nimi</label>
+                        <input id="name" type="text" name="Name">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="Email">
+                        <label for="message">Sõnum</label>
+                        <textarea id="message" name="Message" rows="5" cols="50"></textarea>                        
+                        <button id="teadaNupp" type="submit">Saada</button> 
+                    </form>
+                </div>
             </div>
             <div class="content-area">
                 <h1>Varjupaiga loomad</h1>
-                <button>Tutvu lemmikutega</button>
+                <button style="float:left;" onclick="lemmikudShow()">Tutvu lemmikutega</button>
+                <div id="lemmikud" style="display:none;">
+                    <div class="pilt">                    
+                        <img src="https://ichef.bbci.co.uk/images/ic/720x405/p0517py6.jpg" style="height:200px; width: 400px;">
+                    </div>
+                    <div class="pilt">
+                        <img src="https://ybxzcgnc7b-flywheel.netdna-ssl.com/wp-content/uploads/2018/04/male-dog-names-696x435-2.jpg" style="height:200px; width: 400px;">
+                    </div>
+                </div>
             </div>
             <div class="content-area">
-                <h1>Varjupaiga toetamine</h1>
-                <button id="kuva">Toeta varjupaika</button>
-                <div id="raha" class="hidden">
-                    <h3>Saada meile paari euri!</h3>
+                <h1>Varjupaiga toetamine</h1>                
+                <button onclick="myFunction()">Toeta meie varjupaika</button>
+                <div id="raha" class="hidden" style="display:none;">
+                    <h3>Saada meile paar euri!</h3>
+                    <a href="https://www.paypal.com/us/home"><img src="https://www.paypalobjects.com/webstatic/mktg/logo-center/PP_Acceptance_Marks_for_LogoCenter_266x142.png"></a>
                 </div>
             </div>            
         </div>
         <footer>
             <div class="footer">
-                <h6>Varjupaikade MTÜ</h6>
+                <h5>Varjupaikade MTÜ</h5>
                 <p id="footerText">Raba 32, Pärnu, 80043<br>
                     Registrikood 80249280<br>
                     info@varjupaik.ee<br>
                     üldjuht Triinu Priks +372 <br>5046102<br></p>
+
             </div>
         </footer>
         <script>
@@ -78,13 +100,51 @@
                 x[slideIndex-1].style.display = "block"; 
                 setTimeout(carousel, 6000); // Change image every 2 seconds
             }
-            
-            $(function(){
-                $('#kuva').click(function(){
-                    $('#raha').removeClass('hidden');
-                });                
-            });
+        </script>
+        <!--
+<script>
+function myFunction() {
+var x = document.getElementById('raha');
+if (x.style.visibility === 'hidden') {
+x.style.visibility = 'visible';
+console.log('visible');
+} else {
+x.style.visibility = 'hidden';
+}
 
+
+}
+</script>
+-->
+        <script>
+            function myFunction() {
+                var x = document.getElementById('raha');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+        </script>
+        <script>
+            function kadunudShow() {
+                var x = document.getElementById('kadunud');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+        </script>
+        <script>
+            function lemmikudShow() {
+                var x = document.getElementById('lemmikud');
+                if (x.style.display === 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
         </script>
     </body>
 </html>
