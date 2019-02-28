@@ -1,3 +1,8 @@
+Varjupaik
+http://larskristersamolberg.ikt.khk.ee/VARJUPAIK/
+
+
+
 # Numbrimäng
 
 ## Esimene samm
